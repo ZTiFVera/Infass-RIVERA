@@ -1,0 +1,227 @@
+﻿/* ==========================================================================
+   Auth pages (Login / Register) — split panel, colored CTA + white form side
+   Standalone: no site navigation, no link back to Home
+   ========================================================================== */
+
+.auth-body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.auth-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+    background: linear-gradient(135deg, #eef3f1 0%, #dff1ea 100%);
+}
+
+/* ---------- Card ---------- */
+.auth-flip-card {
+    width: 100%;
+    max-width: 880px;
+    min-height: 480px;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(22, 60, 50, 0.22);
+    background: #fff;
+}
+
+/* ---------- Colored CTA side ---------- */
+.auth-flip-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2.25rem;
+    color: #fff;
+    background: linear-gradient(160deg, #0f7d68 0%, #1abc9c 55%, #57d6bb 100%);
+    overflow: hidden;
+}
+
+    .auth-flip-panel::before {
+        content: "";
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        top: -100px;
+        right: -110px;
+    }
+
+    .auth-flip-panel::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: rgba(44, 62, 80, 0.18);
+        bottom: -90px;
+        left: -70px;
+    }
+
+    .auth-flip-panel h2 {
+        position: relative;
+        z-index: 1;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 1.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .auth-flip-panel p {
+        position: relative;
+        z-index: 1;
+        font-size: .92rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 19rem;
+        margin-bottom: 2rem;
+    }
+
+.auth-flip-btn {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: .75rem 2.5rem;
+    border: 1.5px solid #fff;
+    border-radius: 999px;
+    color: #fff;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: .82rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .15s ease, color .15s ease;
+}
+
+    .auth-flip-btn:hover {
+        background: #fff;
+        color: #0f7d68;
+    }
+
+/* ---------- White form side ---------- */
+.auth-flip-form-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 3.25rem;
+}
+
+.auth-flip-heading {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #1abc9c;
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+/* ---------- Icon fields (light mint, rounded rectangles) ---------- */
+.auth-field {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+    .auth-field i {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        color: #6fb6a6;
+        font-size: .9rem;
+        pointer-events: none;
+    }
+
+    .auth-field .form-control {
+        border: none;
+        border-radius: 10px;
+        background: #e9f7f2;
+        padding: .8rem 1rem .8rem 2.6rem;
+        font-size: .92rem;
+        color: #2c3e50;
+        transition: box-shadow .15s ease, background .15s ease;
+    }
+
+        .auth-field .form-control::placeholder {
+            color: #8fb8ac;
+        }
+
+        .auth-field .form-control:focus {
+            background: #dff1ea;
+            box-shadow: 0 0 0 .2rem rgba(26, 188, 156, 0.2);
+        }
+
+    .auth-field .text-danger {
+        display: block;
+        padding-left: .5rem;
+        font-size: .78rem;
+        margin-top: .25rem;
+    }
+
+.auth-options-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .1rem 0 1.25rem;
+    font-size: .84rem;
+}
+
+    .auth-options-row .form-check-input:checked {
+        background-color: #1abc9c;
+        border-color: #1abc9c;
+    }
+
+    .auth-options-row .form-check-label {
+        color: #8a94a6;
+    }
+
+/* ---------- Submit button (pill, gradient, centered) ---------- */
+.auth-submit-btn {
+    display: block;
+    margin: .5rem auto 0;
+    min-width: 12rem;
+    background: linear-gradient(135deg, #1abc9c, #0f7d68);
+    border: none;
+    border-radius: 999px;
+    padding: .8rem 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: .85rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+    .auth-submit-btn:hover,
+    .auth-submit-btn:focus {
+        color: #fff;
+        transform: translateY(-1px);
+        box-shadow: 0 12px 26px rgba(15, 125, 104, 0.35);
+    }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px) {
+    .auth-flip-card {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .auth-flip-panel {
+        padding: 2.5rem 1.75rem;
+    }
+
+    .auth-flip-form-side {
+        padding: 2.5rem 1.75rem;
+    }
+}

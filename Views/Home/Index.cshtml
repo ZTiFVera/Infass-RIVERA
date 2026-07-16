@@ -37,18 +37,25 @@
                     @if (isAuthed)
                     {
                         <li class="nav-item mx-0 mx-lg-1 d-flex align-items-center">
-                            <span class="nav-link py-3 px-0 px-lg-3">Hi, @User.Identity!.Name!</span>
+                            <span class="nav-link py-3 px-0 px-lg-3" title="Signed in as @User.Identity!.Name!">
+                                <i class="fas fa-user-circle fa-lg"></i>
+                            </span>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1">
                             <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                                <button type="submit" class="nav-link py-3 px-0 px-lg-3 rounded border-0 bg-transparent text-uppercase">Log Out</button>
+                                <button type="submit" class="nav-link py-3 px-0 px-lg-3 rounded border-0 bg-transparent" title="Log Out">
+                                    <i class="fas fa-sign-out-alt fa-lg"></i>
+                                </button>
                             </form>
                         </li>
                     }
                     else
                     {
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" asp-controller="Account" asp-action="Login">Log In</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" asp-controller="Account" asp-action="Register">Register</a></li>
+                        <li class="nav-item mx-0 mx-lg-1">
+                            <a class="nav-link py-3 px-0 px-lg-3 rounded" asp-controller="Account" asp-action="Login" title="Log In / Register">
+                                <i class="fas fa-user-circle fa-lg"></i>
+                            </a>
+                        </li>
                     }
                 </ul>
             </div>

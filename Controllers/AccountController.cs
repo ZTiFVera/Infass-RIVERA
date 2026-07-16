@@ -66,6 +66,8 @@ namespace Infass_RIVERA.Controllers
             return View(model);
         }
 
+       
+
         [HttpGet]
         public IActionResult Login(string? returnUrl = null)
         {
